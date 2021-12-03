@@ -46,7 +46,7 @@ describe(Navigation, () => {
         navigation.up(upValue);
 
         // Then
-        expect(navigation.position.depth).toStrictEqual(1);
+        expect(navigation.position.aim).toStrictEqual(1);
     });
 
     it('updates depth on aim and horizontal change', () => {

@@ -1,7 +1,7 @@
 import { getNavigationInstructions } from "./get-navigation-instructions";
 import fs from 'fs';
 
-const mockFile = "forward 6\ndown 8\nforward 2\nup 3\n";
+const mockFile: string = "forward 6\ndown 8\nforward 2\nup 3\n";
 
 describe(getNavigationInstructions, () => {
     const fsSpy = jest.spyOn(fs, 'readFileSync').mockReturnValue(mockFile);

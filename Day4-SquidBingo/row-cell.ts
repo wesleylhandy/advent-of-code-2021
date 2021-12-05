@@ -1,9 +1,9 @@
-interface BoardCell {
+interface IRowCell {
     value: number;
     isMarked: boolean;
 }
 
-export class RowCell implements BoardCell {
+export class RowCell implements IRowCell {
     private _value: number = -1;
     private _isMarked: boolean = false;
 

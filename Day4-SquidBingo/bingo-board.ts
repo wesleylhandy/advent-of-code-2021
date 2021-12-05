@@ -1,6 +1,14 @@
 import { BoardRow } from "./board-row";
 
-export class BingoBoard {
+interface IBingoBoard {
+    index: number;
+    isWinningBoard: boolean;
+    unmarkedValue: number;
+    markBoard(calledNumber: number): void;
+    toString(): string;
+}
+
+export class BingoBoard implements IBingoBoard {
     private _index: number = -1;
     private _unmarkedValue: number = 0;
     private _rows: BoardRow[] = [];

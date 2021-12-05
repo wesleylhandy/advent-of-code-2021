@@ -1,7 +1,13 @@
 import { leadingZero } from "./helpers";
 import { RowCell } from "./row-cell";
 
-export class BoardRow {
+interface IBoardRow {
+    isWinningRow: boolean;
+    markCell(calledNumber: number): boolean;
+    toString(): string;
+}
+
+export class BoardRow implements IBoardRow {
     private _row: RowCell[] = [];
 
     constructor(row: number[]) {

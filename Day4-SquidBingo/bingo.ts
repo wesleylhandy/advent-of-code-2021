@@ -1,6 +1,17 @@
 import { BingoBoard } from "./bingo-board";
 
-export class Bingo {
+interface IBingo {
+    allBoardsAreWinning: boolean;
+    hasCallsRemaining: boolean;
+    incrementLastCall(): void;
+    markBoards(): void;
+    lastCall: number;
+    lastWinningBoard: number;
+    toString(showOnlyWinners?: boolean): void;
+    winningBoards: BingoBoard[];
+}
+
+export class Bingo implements IBingo {
     private _calls: number[] = [];
     private _boards: BingoBoard[] = [];
     private _callIndex: number = 0;

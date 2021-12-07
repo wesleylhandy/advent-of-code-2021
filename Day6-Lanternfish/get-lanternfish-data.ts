@@ -1,9 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 
-let memoizedData: string[] = [];
+let memoizedData: number[] = [];
 
-export function getBingoData(): string[] {
+export function getLanternFishData(): number[] {
     try {
         if (memoizedData.length > 0) {
             return memoizedData;
@@ -13,8 +13,9 @@ export function getBingoData(): string[] {
                 path.resolve(__dirname, 'data', 'input.txt'),
                     { encoding: 'utf-8'},
                 )
-                .split('\n')
-                .filter(Boolean),
+                .split(',')
+                .filter(Boolean)
+                .map(datum => Number.parseInt(datum.replace('\n', ''), 10)),
         ];
         return memoizedData;
     } catch(error: unknown) {
